@@ -9,7 +9,7 @@ fi
 set -x
 VERSION=''
 REPO='origin'
-TAG_CONTENT='"default value"'
+TAG_CONTENT='default_value'
 
 
 while getopts ":v:r:t:" opt; do
@@ -25,7 +25,7 @@ while getopts ":v:r:t:" opt; do
   esac
 done
 
-TAG_NAME=${VERSION}
+TAG_NAME=${VERSION}'-latest'
 
 # delete tag local
 git tag -d ${TAG_NAME}

@@ -7,9 +7,9 @@ properties(
                 parameters(
                         [
                                 string(defaultValue: '', description: 'Versão atual (opcional). Exemplo: 1.0.0-BUILD01', name: 'versaoAtual'),
-                                string(defaultValue: 'c6-v7.11.11', description: 'Branch de onde será gerada a release', name: 'branch'),
-                                string(defaultValue: '', description: 'Nome da Tag Adicional (opicional). Exemplo: v15', name: 'tagDelivery'),
-                                string(defaultValue: '', description: 'Mensagem a ser passada na tag. Exemplo: para entrega 15.15', name: 'tagContent')
+                                string(defaultValue: '', description: 'Próxima versão (opcional). Exemplo: 1.0.0-BUILD02', name: 'proximaVersao'),                               
+                                string(defaultValue: 'c6-v7.11.13.00.f008', description: 'Branch de onde será gerada a release', name: 'branch'),
+                                string(defaultValue: '', description: 'Próxima versão minor (opcional). Exemplo: 1.0.0-BUILD02.01', name: 'versaoMinor')
                         ]
                 ),
                 pipelineTriggers([])
@@ -61,16 +61,14 @@ node('jdk8-maven-slim') {
                 minorVersion = nextVersion + '.01'
             }
 
-            sh tagDelivery = "${tagDelivery}-latest"
-
             echo 'minorVersion: ' + minorVersion
             env.MAIN_BRANCH = "${params.branch}"
             env.CURRENT_VERSION = "${currentVersion}"
+            env.NEXT_VERSION = "${nextVersion}"
+            env.NEXT_VERSION_SNAPSHOT =  "${nextVersion}-SNAPSHOT"
             env.TAG = "${currentVersion}"
             env.MINOR_VERSION = "${minorVersion}"
             env.MINOR_VERSION_SNAPSHOT = "${minorVersion}-SNAPSHOT"
-            env.DELIVERY_TAG = "${tagDelivery}"
-            env.TAG_CONTENT = "${tagContent}"
 
             echo 'MINOR_VERSION: ' + minorVersion
 
@@ -117,6 +115,7 @@ node('jdk8-maven-slim') {
 
                 // Versão do Release
                 sh 'git checkout -b release/${TAG}'
+         
                 updateVersionWithMaven(CURRENT_VERSION)
 
                 sh 'git commit -a -m "Releasing ${TAG} from ${MAIN_BRANCH} by ${BUILD_USER} through Jenkins (${BUILD_URL})"'
@@ -151,9 +150,16 @@ node('jdk8-maven-slim') {
         
         stage('Build Database') {
             def currentVersion = "${env.CURRENT_VERSION}"
+            echo "============================================"
             echo 'CURRENT_VERSION: ' + CURRENT_VERSION
-            def versionDb = CURRENT_VERSION.substring(0, CURRENT_VERSION.indexOf('.00-gsx'))
+            echo "============================================"
+
+            def versionDb = CURRENT_VERSION.substring(0, CURRENT_VERSION.indexOf('.\\d\\d-\\w*'))
+
+            echo "============================================"
             echo 'Current version = ' + versionDb
+            echo "============================================"
+
             configFileProvider([configFile(fileId: 'gradle-mirror', targetLocation: '/home/jenkins/.gradle/init.gradle')]) {
                 sh "./gradlew clean buildBackend -Pend=HEAD -Pversion=${versionDb} --refresh-dependencies --stacktrace -Dwrap.local=false"
             }
@@ -172,6 +178,7 @@ node('jdk8-maven-slim') {
                 updateVersionWithMaven(env.NEXT_VERSION_SNAPSHOT)
                 sh 'git commit -a -m "Updating to next version: ${NEXT_VERSION}"'
                 sh 'git push origin ${MAIN_BRANCH}'
+
             }
 
             currentBuild.description = "Versão ${env.CURRENT_VERSION}"
@@ -209,11 +216,6 @@ def updateVersionWithMaven(String version) {
                     sh "mvn versions:set -DnewVersion=${version} versions:commit -q -f persistence/pom.xml"
                     sh "mvn versions:set -DnewVersion=${version} versions:commit -q -f service/pom.xml"
                     sh "mvn versions:set -DnewVersion=${version} versions:commit -q -f webapp/pom.xml"
-
-                    sh 'git tag -d ${DELIVERY_TAG}'
-                    sh 'git push --delete ${REPO} ${DELIVERY_TAG}'
-                    sh 'git tag -a ${DELIVERY_TAG} -m ${TAG_CONTENT}'
-                    sh 'git push ${DELIVERY_TAG}'
             }
 }
 

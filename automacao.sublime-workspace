@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"pa",
+				"pattern"
+			],
+			[
+				"te",
+				"testRegex"
+			],
+			[
+				"ps",
+				"psm\tprivate static method() { … }"
+			],
+			[
+				"ma",
+				"matcher"
+			],
+			[
+				"version",
+				"versionDb"
+			],
+			[
+				"Cu",
+				"CURRENT_VERSION"
+			],
+			[
+				"ver",
+				"versionDb"
+			],
+			[
 				"tag",
 				"TAG_NAME"
 			],
@@ -23,14 +51,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "automacao.sublime-project",
-			"settings":
-			{
-				"buffer_size": 4,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -43,6 +63,34 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"in",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"build",
+				"Build: New Build System"
+			],
+			[
+				"ssgroo",
+				"Set Syntax: Groovy"
+			],
+			[
+				"ssgro",
+				"Set Syntax: Groovy"
+			],
+			[
+				"ssgroovy",
+				"Set Syntax: Groovy"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"sssh",
+				"Set Syntax: Bourne Again Shell (bash)"
+			],
 			[
 				"sql",
 				"Set Syntax: PL/SQL (Oracle)"
@@ -70,10 +118,6 @@
 			[
 				"instal",
 				"Package Control: Install Package"
-			],
-			[
-				"sssh",
-				"Set Syntax: Bourne Again Shell (bash)"
 			],
 			[
 				"uni",
@@ -105,10 +149,6 @@
 			],
 			[
 				"ssgrovy",
-				"Set Syntax: Groovy"
-			],
-			[
-				"ssgroo",
 				"Set Syntax: Groovy"
 			],
 			[
@@ -146,14 +186,32 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/home/ahmr/projetos/matera/automacao",
+		"/home/ahmr/projetos/matera/automacao/Jenkins",
+		"/home/ahmr/projetos/matera/automacao/Jenkins/renda-fixa"
+	],
 	"file_history":
 	[
+		"/home/ahmr/projetos/matera/automacao/Jenkins/renda-fixa/TestRegex.groovy",
+		"/home/ahmr/projetos/matera/emprestimo/.git/rebase-merge/git-rebase-todo",
+		"/home/ahmr/.config/sublime-text-3/Packages/User/Groovy.sublime-build",
+		"/home/ahmr/projetos/matera/automacao/Jenkins/renda-fixa/build_new_release.groovy",
+		"/home/ahmr/.config/sublime-text-3/Packages/User/groovy.sublime-build",
+		"/home/ahmr/projetos/matera/emprestimo/commit-2a8e04f",
+		"/home/ahmr/projetos/matera/automacao/install_get_path_install.sh",
+		"/home/ahmr/Documentos/c6/entregas/entrega-18/10/emprestimo/emp_7.11.08/comp_all.sql",
+		"/home/ahmr/Downloads/CHANGELOG.md",
+		"/home/ahmr/projetos/matera/emprestimo/.gitignore",
+		"/home/ahmr/projetos/matera/emprestimo/backend/src/oracle/procedures/.gitignore",
+		"/home/ahmr/projetos/matera/emprestimo/backend/src/oracle/procedures/sEmApiCadastraPreContrato.sql",
+		"/home/ahmr/projetos/matera/automacao/automacao.sublime-project",
 		"/home/ahmr/projetos/matera/automacao/update_tag.sh",
 		"/home/ahmr/projetos/matera/automacao/update_environment.sh",
 		"/home/ahmr/projetos/matera/automacao/tagging_prepare_2.sh",
 		"/home/ahmr/projetos/matera/automacao/tagging_prepare.sh",
 		"/home/ahmr/projetos/matera/automacao/kill_process.sh",
-		"/home/ahmr/projetos/matera/automacao/automacao.sublime-project",
 		"/home/ahmr/projetos/matera/renda-fixa/.git/COMMIT_EDITMSG",
 		"/home/ahmr/projetos/matera/renda-fixa/.git/rebase-merge/git-rebase-todo",
 		"/home/ahmr/projetos/matera/renda-fixa/.git/TAG_EDITMSG",
@@ -177,7 +235,6 @@
 		"/home/ahmr/projetos/matera/emprestimo/backend/src/oracle/views/vem_extrato_contrato_princ.sql",
 		"/home/ahmr/projetos/matera/emprestimo/backend/src/oracle/views/vEm_mv_Saldo_Contr_Integr_Gar.sql",
 		"/home/ahmr/Documentos/testes/emp_7.11.08_nowrap/emp_compila_7.11.08_201906071520.log",
-		"/home/ahmr/Downloads/CHANGELOG.md",
 		"/home/ahmr/Documentos/c6/entregas/entrega-15/15/Core/Cadastro-Central/CHANGELOG.md",
 		"/home/ahmr/projetos/matera/cadastro-central/.git/TAG_EDITMSG",
 		"/home/ahmr/Downloads/CHANGELOG (6).md",
@@ -210,7 +267,6 @@
 		"/home/ahmr/Documentos/c6/entregas/Entrega-19/Core/Convenios/CHANGELOG.md",
 		"/home/ahmr/Documentos/c6/entregas/Entrega-19/Core/CHANGELOG_DRAFT.md",
 		"/home/ahmr/Documentos/testes/packages_to_rebuild.sql",
-		"/home/ahmr/projetos/matera/emprestimo/.git/rebase-merge/git-rebase-todo",
 		"/home/ahmr/projetos/matera/emprestimo/.git/MERGE_MSG",
 		"/home/ahmr/Documentos/c6/queriesUteis/objetos_descompilados.sql",
 		"/media/ahmr/Linux Mint 19.2 Cinnamon 64-bit/home/ahmr/.wine/drive_c/oracle/network/admin/tnsnames.ora",
@@ -225,13 +281,14 @@
 	],
 	"find":
 	{
-		"height": 22.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 104.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -239,6 +296,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".(\\d\\d)\\-(\\w*)",
+			"(\\d*)\\-(\\w*)",
+			"\\.(\\d)\\-(\\w*)",
+			".(\\d)\\-(\\w*)",
+			"\\\\.(\\d)\\-(\\w*)",
+			"\\.(\\d)\\-(\\w*)",
+			".\\d\\d-\\w*",
+			"\\\\d\\\\d",
+			"CURRENT_VERSION:",
+			"-fix",
+			"versionDb",
+			"ignored",
+			"DELIVERY_TAG",
+			"\n            ",
+			"()\n",
+			"tagCustom",
+			"CUSTOM_TAG",
 			"processahead",
 			"vtta.perio",
 			"sEmConvert",
@@ -288,9 +362,12 @@
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"TAG_DELIVER",
+			"tagDelivery",
+			"DELIVERY_TAG",
 			"n\\u00famero",
 			"per\\00edodo",
 			"per\\00do",
@@ -323,43 +400,14 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "automacao.sublime-project",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 22.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -388,15 +436,19 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 165.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "",
+	"pinned_build_system": "Packages/User/Groovy.sublime-build",
 	"project": "automacao.sublime-project",
 	"replace":
 	{
-		"height": 40.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -433,7 +485,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 267.0,
 	"status_bar_visible": true,
 	"template_settings":

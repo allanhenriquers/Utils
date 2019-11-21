@@ -122,6 +122,12 @@ node('jdk8-maven-slim') {
 
                 sh 'git tag $TAG'
                 sh 'git push origin $TAG'
+
+                def existsLatest = 
+
+                if (LATEST) {
+                    sh 'git tag | grep latest'
+                }
                 
 
             }

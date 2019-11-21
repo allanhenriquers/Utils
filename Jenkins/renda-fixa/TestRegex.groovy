@@ -1,11 +1,13 @@
 String CURRENT_VERSION = '7.11.10.00-gsx-fix-c6-31'
-String pattern = ~/.(\d{1,2})\-(\w*)/
 
-println pattern
+def pomVersionPattern = "^((?:\\d+\\.){2}\\d+).*"
 
-println CURRENT_VERSION =~ pattern
-println CURRENT_VERSION.indexOf('.00-gsx')
-// .indexOf('.\\d\\d-\\w*')
+def versionDb
+if(CURRENT_VERSION.matches(pomVersionPattern)) {
+    versionDb = CURRENT_VERSION.replaceAll(pomVersionPattern, '\$1') 
+
+}
+println versionDb
 
 // def versionDb = CURRENT_VERSION.substring(0, CURRENT_VERSION.indexOf('.\\d\\d-\\w*'))
 

@@ -17,4 +17,5 @@ tests/dbtest/test-output/
 *.mmx
 *.rep
 *.vscode
-*.sublime-workspace
+automacao.sublime-workspace
+automacao.sublime-project

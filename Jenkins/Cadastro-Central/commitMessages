@@ -1,0 +1,5 @@
+[C6-1089] Correcao na autorizacao para inserir pessoa no cadastro central
+Alterando a precisão do calculo da CET para 6 casas decimais
+Altera para build funcionar com versão CUSTOM - vX.XX.XX-carbon.XX.XX - acerto em versao do plugin
+Altera para build funcionar com versão CUSTOM - vX.XX.XX-carbon.XX.XX
+Alterando a precisão do calculo da CET para 6 casas decimais

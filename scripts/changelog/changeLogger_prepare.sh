@@ -13,11 +13,11 @@ echo "#!/bin/sh
 SISTEMA=\${PWD##*/}
 LOG_PATH='./CHANGELOG.md'
 
-while getopts \":o:d:s:\" opt; do
+while getopts \":o:n:\" opt; do
   case \$opt in
     o) OLD_TAG=\"\$OPTARG\"
     ;;
-    d) NEW_TAG=\"\$OPTARG\"
+    n) NEW_TAG=\"\$OPTARG\"
     ;;
     \?) echo \"Invalid option -\$OPTARG\" >&2
     ;;

@@ -1,12 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
 #cria alias para mostrar ultimas versões
-echo alias clogger=\'~/.scripts/changeLogger.sh\' >> ~/.bashrc
+echo alias clogger=\'~/.scripts/changeLogger\' >> ~/.bashrc
+export PATH="/home/ahmr/.scripts:${PATH}"
 
 [ -d ~/.scripts ] || mkdir ~/.scripts 
 cd ~/.scripts
-touch changeLogger.sh
-sudo chmod +x changeLogger.sh
+touch changeLogger
+sudo chmod +x changeLogger
 source ~/.bashrc
 echo "#!/bin/sh
 
@@ -24,11 +25,10 @@ while getopts \":o:n:\" opt; do
   esac
 done
 
-LOG_PATH='./CHANGELOG.md'
 
 echo 'Tag do '\${SISTEMA}':\n    '\${NEW_TAG}'\nDemandas:'  > \${LOG_PATH}
 
 git log --pretty=format:'    %s' \${OLD_TAG}..\${NEW_TAG} | grep -v -e 'Updating' -e 'Merging' -e 'Releasing' -e 'Merge' -e 'Automati'>> \${LOG_PATH}
 
-echo 'Entregue em:\\n''    '\`date\` >> \${LOG_PATH} " > ~/.scripts/changeLogger.sh
+echo 'Entregue em:\\n''    '\`date\` >> \${LOG_PATH} " > ~/.scripts/changeLogger
 

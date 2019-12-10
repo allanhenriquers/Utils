@@ -1,17 +1,25 @@
-#!/bin/bash
+#!/bin/sh
 
 #cria alias para mostrar ultimas versões
 echo alias latest_versions=\'git tag \| grep latest\' >> ~/.bashrc
 
+#deleta a tag tida como última no contexto atual e cria a nova ultima versão
+# echo alias change_latest=\'~/.scripts/change_latest.sh -v \$1\' >> ~/.bashrc
+
+#insert scripts paths in PATH
+export PATH="/home/ahmr/.scripts:${PATH}"
+
 [ -d ~/.scripts ] || mkdir ~/.scripts 
 cd ~/.scripts
-touch update_tag.sh
-sudo chmod +x update_tag.sh
+touch change_latest
+sudo chmod +x change_latest
+source ~/.bashrc
+
 echo "#!/bin/bash
 
 if [ \$# -eq 0 ]
   then
-    echo 'Você deveria informar uma versão'
+    echo \"Você deveria informar uma versao\"
     exit 1
 fi
 
@@ -37,14 +45,14 @@ git show \$TAG_NAME
 
 # delete local tag 
 git tag -d \$TAG_NAME
+
 # delete remote tag 
 git push --delete \$REPO \$TAG_NAME
 
+#create a tag 
 git tag -a \$TAG_NAME
 
-git push \$REPO \$TAG_NAME" >> ~/.scripts/update_tag.sh
+git push \$REPO \$TAG_NAME" >> ~/.scripts/change_latest
 
-#deleta a tag tida como última no contexto atual e cria a nova ultima versão
-echo alias change_latest=\'~/.scripts/update_tag.sh -v \$1\' >> ~/.bashrc
 
-source ~/.bashrc
+

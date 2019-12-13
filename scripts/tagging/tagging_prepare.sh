@@ -52,7 +52,7 @@ git push --delete \$REPO \$TAG_NAME
 #create a tag 
 git tag -a \$TAG_NAME
 
-git push \$REPO \$TAG_NAME" >> ~/.scripts/change_latest
+git push \$REPO \$TAG_NAME" > ~/.scripts/change_latest
 
 
 

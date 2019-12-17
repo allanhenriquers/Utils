@@ -1,10 +1,12 @@
 #!/bin/sh
 
+
+set -e
 #cria alias para mostrar ultimas versões
 echo alias latest_versions=\'git tag \| grep latest\' >> ~/.bashrc
 
 #deleta a tag tida como última no contexto atual e cria a nova ultima versão
-# echo alias change_latest=\'~/.scripts/change_latest.sh -v \$1\' >> ~/.bashrc
+echo alias change_latest=\'~/.scripts/change_latest.sh -v \$1\' >> ~/.bashrc
 
 #insert scripts paths in PATH
 export PATH="/home/ahmr/.scripts:${PATH}"
@@ -17,6 +19,7 @@ source ~/.bashrc
 
 echo "#!/bin/bash
 
+set -e
 if [ \$# -eq 0 ]
   then
     echo \"Você deveria informar uma versao\"

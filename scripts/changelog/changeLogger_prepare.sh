@@ -3,7 +3,7 @@
 set -e
 #cria alias para mostrar ultimas versões
 echo alias clogger=\'~/.scripts/changeLogger\' >> ~/.bashrc
-export PATH="/home/ahmr/.scripts:${PATH}"
+export PATH="~/.scripts:${PATH}"
 
 [ -d ~/.scripts ] || mkdir ~/.scripts 
 cd ~/.scripts

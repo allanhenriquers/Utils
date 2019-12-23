@@ -9,7 +9,7 @@ echo alias latest_versions=\'git tag \| grep latest\' >> ~/.bashrc
 echo alias change_latest=\'~/.scripts/change_latest.sh -v \$1\' >> ~/.bashrc
 
 #insert scripts paths in PATH
-export PATH="/home/ahmr/.scripts:${PATH}"
+export PATH="~/.scripts:${PATH}"
 
 [ -d ~/.scripts ] || mkdir ~/.scripts 
 cd ~/.scripts
